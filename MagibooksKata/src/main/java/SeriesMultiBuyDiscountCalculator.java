@@ -16,6 +16,8 @@ public class SeriesMultiBuyDiscountCalculator implements DiscountCalculator {
         float discountMultiplier = switch (distinctBookIds) {
             case 2 -> 0.05f;
             case 3 -> 0.1f;
+            case 4 -> 0.2f;
+            case 5 -> 0.25f;
             default -> 0;
         };
 

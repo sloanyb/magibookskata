@@ -47,9 +47,9 @@ public class BasketCalculatorTests {
         basket.addBook(bookTwo);
 
         BasketCalculator calculator = new BasketCalculator(basket, discountCalculator);
-        double basketTotal = calculator.getBasketTotal();
+        float basketTotal = calculator.getBasketTotal();
 
-        assertEquals(15.2, basketTotal);
+        assertEquals(15.2f, basketTotal);
         verify(discountCalculator, times(1)).getDiscountAmountPounds();
     }
 }

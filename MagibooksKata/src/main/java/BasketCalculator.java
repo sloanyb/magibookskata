@@ -8,8 +8,8 @@ public class BasketCalculator {
         this.discountCalculator = discountCalculator;
     }
 
-    public double getBasketTotal() {
-        double totalBeforeDiscount = 0;
+    public float getBasketTotal() {
+        float totalBeforeDiscount = 0;
         for (int i=0; i<basket.books.size(); i++) {
             totalBeforeDiscount += basket.books.get(i).getPrice();
         }

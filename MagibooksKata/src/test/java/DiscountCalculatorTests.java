@@ -93,6 +93,26 @@ public class DiscountCalculatorTests {
         assertEquals(10f, discountAmountPounds);
     }
 
+    @Test
+    void whenVariousBooks_ThenDiscountApplied() {
+        Basket basket = new Basket();
+
+        basket.addBook(new Book(1));
+        basket.addBook(new Book(1));
+        basket.addBook(new Book(2));
+        basket.addBook(new Book(2));
+        basket.addBook(new Book(3));
+        basket.addBook(new Book(3));
+        basket.addBook(new Book(4));
+        basket.addBook(new Book(5));
+
+
+        SeriesMultiBuyDiscountCalculator calculator = new SeriesMultiBuyDiscountCalculator(basket);
+        float discountAmountPounds = calculator.getDiscountAmountPounds();
+
+        assertEquals(12.8f, discountAmountPounds);
+    }
+
 }
 
 

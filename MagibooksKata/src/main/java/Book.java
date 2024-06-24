@@ -12,7 +12,7 @@ public class Book {
         return bookId;
     }
 
-    public double getPrice() {
-        return 8;
+    public float getPrice() {
+        return 8f;
     }
 }
