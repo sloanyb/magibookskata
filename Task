@@ -1,0 +1,27 @@
+Once upon a time there was a series of books about a young wizard called Harry. Children (and adults) all over the world loved these stories, and books are flying off the shelves.
+
+You're a developer working for MagiBooks - an online store specialising in the sale of books all about fantasy and magic, and you want to sell these books. You've been asked to write the software to calculate various basket totals.
+
+At the moment, your store can only get hold of the first five books, but it may be possible in the future we can source all 7 along with any others that the author may make.
+
+Here is how MagiBooks wants to price the items...
+
+- One copy of any of the five books costs £8.00.
+- If, however, you buy two different books from the series, you get a 5% discount on those two books.
+- If you buy 3 different books, you get a 10% discount.
+- With 4 different books, you get a 20% discount.
+- If you go the whole hog, and buy all 5 books we currently sell, you get a huge 25% discount.
+
+(Note that if you buy, say, four books, of which 3 are different titles, you get a 10% discount on the 3 that form part of a set, but the fourth book still costs £8.00)
+
+Your mission is to write a piece of code to calculate the price of any conceivable shopping basket, giving as big a discount as possible.
+
+For example, how much does this basket of books cost?
+
+2 copies of the first book
+2 copies of the second book
+2 copies of the third book
+1 copy of the fourth book
+1 copy of the fifth book
+
+Hint: The answer is £51.20
