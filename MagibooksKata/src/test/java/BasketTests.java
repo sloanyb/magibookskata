@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BasketTests {
     @Test
-    void WhenBookAddedToBasket_ThenBasketIsCorrect()
+    void whenBookAddedToBasket_ThenBasketIsCorrect()
     {
         int bookId = 10;
 

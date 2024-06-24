@@ -11,4 +11,8 @@ public class Book {
     public int getBookId() {
         return bookId;
     }
+
+    public double getPrice() {
+        return 8;
+    }
 }
