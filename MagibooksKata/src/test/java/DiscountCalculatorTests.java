@@ -14,7 +14,7 @@ public class DiscountCalculatorTests {
         SeriesMultiBuyDiscountCalculator calculator = new SeriesMultiBuyDiscountCalculator(basket);
         double discountAmountPounds = calculator.getDiscountAmountPounds();
 
-        assertEquals(0, discountAmountPounds);
+        assertEquals(0f, discountAmountPounds);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class DiscountCalculatorTests {
         SeriesMultiBuyDiscountCalculator calculator = new SeriesMultiBuyDiscountCalculator(basket);
         double discountAmountPounds = calculator.getDiscountAmountPounds();
 
-        assertEquals(0.8, discountAmountPounds);
+        assertEquals(0.8f, discountAmountPounds);
     }
 
     @Test
@@ -46,9 +46,9 @@ public class DiscountCalculatorTests {
         basket.addBook(bookThree);
 
         SeriesMultiBuyDiscountCalculator calculator = new SeriesMultiBuyDiscountCalculator(basket);
-        double discountAmountPounds = calculator.getDiscountAmountPounds();
+        float discountAmountPounds = calculator.getDiscountAmountPounds();
 
-        assertEquals(2.4, discountAmountPounds);
+        assertEquals(2.4f, discountAmountPounds);
     }
 
 }

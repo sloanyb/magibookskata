@@ -1,3 +1,3 @@
 public interface DiscountCalculator {
-    double getDiscountAmountPounds();
+    float getDiscountAmountPounds();
 }

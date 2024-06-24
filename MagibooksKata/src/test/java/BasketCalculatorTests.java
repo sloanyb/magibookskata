@@ -8,7 +8,7 @@ public class BasketCalculatorTests {
     void whenNoBooks_ThenZeroTotal() {
         Basket b = new Basket();
         DiscountCalculator discountCalculator = mock(DiscountCalculator.class);
-        when(discountCalculator.getDiscountAmountPounds()).thenReturn((double) 0);
+        when(discountCalculator.getDiscountAmountPounds()).thenReturn(0f);
 
         BasketCalculator calculator = new BasketCalculator(b, discountCalculator);
 
@@ -22,7 +22,7 @@ public class BasketCalculatorTests {
     void whenOneBookAndNoDiscount_ThenCorrectAmount() {
         Basket basket = new Basket();
         DiscountCalculator discountCalculator = mock(DiscountCalculator.class);
-        when(discountCalculator.getDiscountAmountPounds()).thenReturn((double) 0);
+        when(discountCalculator.getDiscountAmountPounds()).thenReturn(0f);
         Book book = new Book(1);
 
         basket.addBook(book);
@@ -38,7 +38,7 @@ public class BasketCalculatorTests {
     void whenTwoBooksAndDiscount_ThenDiscountApplied() {
         Basket basket = new Basket();
         DiscountCalculator discountCalculator = mock(DiscountCalculator.class);
-        when(discountCalculator.getDiscountAmountPounds()).thenReturn((double) 0.8);
+        when(discountCalculator.getDiscountAmountPounds()).thenReturn(0.8f);
 
         Book bookOne = new Book(1);
         Book bookTwo = new Book(2);
@@ -52,7 +52,4 @@ public class BasketCalculatorTests {
         assertEquals(15.2, basketTotal);
         verify(discountCalculator, times(1)).getDiscountAmountPounds();
     }
-
-
 }
-

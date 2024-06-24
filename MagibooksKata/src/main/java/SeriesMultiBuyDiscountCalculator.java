@@ -1,3 +1,5 @@
+import java.util.stream.Collectors;
+
 public class SeriesMultiBuyDiscountCalculator implements DiscountCalculator {
 
     private final Basket basket;
@@ -8,18 +10,18 @@ public class SeriesMultiBuyDiscountCalculator implements DiscountCalculator {
     }
 
     @Override
-    public double getDiscountAmountPounds() {
-        int numberOfBooksInBasket = basket.books.size();
-        double discountMultiplier = 0;
+    public float getDiscountAmountPounds() {
+        int distinctBookIds = basket.books.stream().map(Book::getBookId).collect(Collectors.toList()).stream().distinct().toList().size();
 
-        if (numberOfBooksInBasket == 2) {
-            if (basket.books.getFirst().getBookId() != basket.books.getLast().getBookId()) {
-                discountMultiplier = 0.05;
-            }
-        }
+        float discountMultiplier = switch (distinctBookIds) {
+            case 2 -> 0.05f;
+            case 3 -> 0.1f;
+            default -> 0;
+        };
 
-        double total = 0;
-        for (int i=0; i<basket.books.size(); i++) {
+        float total = 0;
+
+        for (int i = 0; i < basket.books.size(); i++) {
             total += basket.books.get(i).getPrice();
         }
 
