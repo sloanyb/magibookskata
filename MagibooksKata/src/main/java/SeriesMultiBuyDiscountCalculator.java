@@ -10,7 +10,7 @@ public class SeriesMultiBuyDiscountCalculator implements DiscountCalculator {
     @Override
     public double getDiscountAmountPounds() {
         int numberOfBooksInBasket = basket.books.size();
-        double discountMultiplier = 1;
+        double discountMultiplier = 0;
 
         if (numberOfBooksInBasket == 2) {
             if (basket.books.getFirst().getBookId() != basket.books.getLast().getBookId()) {
