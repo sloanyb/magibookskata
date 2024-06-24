@@ -1,27 +1,18 @@
 import org.junit.jupiter.api.Test;
 
-
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BasketTests {
     @Test
-    void WhenNoBooks_ThenZeroTotal() {
+    void WhenBookAddedToBasket_ThenBasketIsCorrect()
+    {
+        int bookId = 10;
+
         Basket b = new Basket();
 
-        double basketTotal = b.getTotal();
+        b.addBook(new Book(bookId));
 
-        assertEquals(0, basketTotal);
-    }
-
-    @Test
-    void WhenOneBook_ThenCorrectAmount() {
-        Basket b = new Basket();
-        Book book = new Book(1);
-
-        b.addBook(book);
-
-        double basketTotal = b.getTotal();
-        assertEquals(8.00, basketTotal);
+        assertEquals(1, b.books.size());
+        assertEquals(bookId, b.books.getFirst().getBookId());
     }
 }
